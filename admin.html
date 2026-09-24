@@ -5,52 +5,323 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin | YOUNG CEO ORGANIC FARM</title>
   <style>
-    :root{--green:#1d4d3b;--green2:#2d6a4f;--pale:#edf6ee;--ink:#203027;--muted:#617067;--danger:#a93636;--line:#dce8df}*{box-sizing:border-box}body{margin:0;background:#f7faf7;color:var(--ink);font-family:Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{width:min(1120px,calc(100% - 32px));margin:auto}.top{background:var(--green);color:#fff;padding:20px 0}.top-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;letter-spacing:.04em}.muted{color:var(--muted)}.login{max-width:460px;margin:80px auto;background:#fff;padding:32px;border-radius:20px;box-shadow:0 15px 40px #173e2414}.login h1{margin-top:0;color:var(--green)}.field{margin:16px 0}.field label{display:block;font-weight:700;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}.field textarea{min-height:100px;resize:vertical}.btn{border:0;border-radius:10px;padding:12px 18px;background:var(--green2);color:#fff;font-weight:700}.btn.secondary{background:var(--pale);color:var(--green)}.btn.danger{background:#fff0f0;color:var(--danger)}.hidden{display:none!important}.notice{padding:12px 14px;border-radius:10px;background:#fff3cd;color:#735b00;margin:15px 0}.error{background:#fff0f0;color:var(--danger)}.dashboard{padding:32px 0 70px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:20px;box-shadow:0 8px 25px #173e2408}.card h2{color:var(--green);margin-top:0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.product{border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}.product-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.product-head h3{margin:0;color:var(--green)}.product img{width:100px;height:70px;object-fit:cover;border-radius:8px}.product-row{display:flex;gap:14px;align-items:flex-start}.status{font-weight:700;color:var(--green2);min-height:24px}@media(max-width:760px){.grid{grid-template-columns:1fr}.top-inner{align-items:flex-start;flex-direction:column}}
+    :root {
+      --green-900: #1d4d3b;
+      --green-700: #2d6a4f;
+      --green-500: #58a56b;
+      --green-300: #dfeee3;
+      --text: #1f2a22;
+      --muted: #58655d;
+      --white: #ffffff;
+      --card: #f9faf7;
+      --border: #dce8df;
+      --danger: #a22f2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f9f5; color: var(--text);
+    }
+    button, input, textarea { font: inherit; }
+    .shell { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar { background: var(--green-900); color: var(--white); padding: 20px 0; }
+    .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .brand { font-weight: 800; letter-spacing: .04em; }
+    .btn { border: 0; border-radius: 10px; padding: 12px 18px; font-weight: 700; cursor: pointer; }
+    .btn.primary { background: var(--green-700); color: var(--white); }
+    .btn.secondary { background: var(--green-300); color: var(--green-900); }
+    .btn.danger { background: #fff0f0; color: var(--danger); }
+    .muted { color: var(--muted); }
+    .login-box {
+      max-width: 480px; margin: 80px auto; background: var(--white); border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 16px 40px rgba(26,70,54,0.08); padding: 30px;
+    }
+    .login-box h1 { margin-top: 0; color: var(--green-900); }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--green-900); }
+    .field input, .field textarea { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border); background: #fff; }
+    .field textarea { min-height: 120px; resize: vertical; }
+    .notice { padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; }
+    .notice.error { background: #fff0f0; color: var(--danger); }
+    .notice.info { background: #edf6ee; color: var(--green-900); }
+    .dashboard { padding: 28px 0 60px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 22px; box-shadow: 0 10px 25px rgba(15,48,36,0.05); margin-bottom: 20px; }
+    .card h2 { margin-top: 0; color: var(--green-900); }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .product-list { display: grid; gap: 16px; }
+    .product-item { border: 1px solid var(--border); border-radius: 14px; padding: 16px; background: #fff; }
+    .product-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+    .product-head h3 { margin: 0; color: var(--green-900); }
+    .product-body { display: flex; gap: 14px; align-items: flex-start; }
+    .product-body img { width: 100px; height: 80px; object-fit: cover; border-radius: 8px; }
+    .hidden { display: none !important; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .topbar-inner { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 <body>
-  <header class="top"><div class="shell top-inner"><div class="brand">YOUNG CEO ORGANIC FARM · ADMIN</div><button id="logout" class="btn secondary hidden">Log out</button></div></header>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">YOUNG CEO ORGANIC FARM · ADMIN</div>
+      <button id="logoutBtn" class="btn secondary hidden">Logout</button>
+    </div>
+  </header>
+
   <main class="shell">
-    <section id="loginView" class="login">
+    <section id="loginView" class="login-box">
       <h1>Admin login</h1>
-      <p class="muted">Manage farm content, prices, and images securely.</p>
-      <div id="loginMessage" class="notice hidden"></div>
+      <p class="muted">Use the admin login below to update prices, product images, and homepage content.</p>
+      <div id="loginNotice" class="notice info">Demo admin login: admin@youngceoorganicfarm.com / admin123</div>
       <form id="loginForm">
-        <div class="field"><label for="email">Admin email</label><input id="email" type="email" required autocomplete="email"></div>
-        <div class="field"><label for="password">Password</label><input id="password" type="password" required autocomplete="current-password"></div>
-        <button class="btn" type="submit">Sign in</button>
+        <div class="field"><label>Email</label><input id="email" type="email" value="admin@youngceoorganicfarm.com" required /></div>
+        <div class="field"><label>Password</label><input id="password" type="password" value="admin123" required /></div>
+        <button class="btn primary" type="submit">Sign in</button>
       </form>
     </section>
 
-    <section id="dashboard" class="dashboard hidden">
-      <div class="status" id="status"></div>
+    <section id="dashboardView" class="dashboard hidden">
       <div class="grid">
-        <div class="card"><h2>Homepage settings</h2>
+        <div class="card">
+          <h2>Homepage settings</h2>
           <form id="settingsForm">
-            <div class="field"><label for="heroTitle">Hero title</label><input id="heroTitle" required></div>
-            <div class="field"><label for="heroText">Hero description</label><textarea id="heroText" required></textarea></div>
-            <div class="field"><label for="aboutText">About text</label><textarea id="aboutText" required></textarea></div>
-            <div class="field"><label for="phone">Phone</label><input id="phone" required></div>
-            <div class="field"><label for="emailSetting">Public email</label><input id="emailSetting" type="email"></div>
-            <div class="actions"><button class="btn" type="submit">Save settings</button></div>
+            <div class="field"><label>Farm name</label><input id="farmNameInput" /></div>
+            <div class="field"><label>Hero title</label><input id="heroTitleInput" /></div>
+            <div class="field"><label>Hero text</label><textarea id="heroTextInput"></textarea></div>
+            <div class="field"><label>About text</label><textarea id="aboutTextInput"></textarea></div>
+            <div class="field"><label>Phone</label><input id="phoneInput" /></div>
+            <div class="field"><label>Email</label><input id="emailInput" type="email" /></div>
+            <div class="actions"><button class="btn primary" type="submit">Save settings</button></div>
           </form>
         </div>
-        <div class="card"><h2>Add product</h2>
+
+        <div class="card">
+          <h2>Add product</h2>
           <form id="productForm">
-            <div class="field"><label for="productName">Name</label><input id="productName" required></div>
-            <div class="field"><label for="productCategory">Category</label><input id="productCategory" required></div>
-            <div class="field"><label for="productPrice">Price (KSh)</label><input id="productPrice" type="number" min="0" step="1" required></div>
-            <div class="field"><label for="productDescription">Description</label><textarea id="productDescription" required></textarea></div>
-            <div class="field"><label for="productImage">Product image</label><input id="productImage" type="file" accept="image/*"></div>
-            <div class="actions"><button class="btn" type="submit">Add product</button></div>
+            <div class="field"><label>Name</label><input id="productNameInput" /></div>
+            <div class="field"><label>Category</label><input id="productCategoryInput" /></div>
+            <div class="field"><label>Price (KSh)</label><input id="productPriceInput" type="number" min="0" /></div>
+            <div class="field"><label>Description</label><textarea id="productDescriptionInput"></textarea></div>
+            <div class="field"><label>Image</label><input id="productImageInput" type="file" accept="image/*" /></div>
+            <div class="actions"><button class="btn primary" type="submit">Add product</button></div>
           </form>
         </div>
       </div>
-      <div class="card"><h2>Products</h2><div id="products"></div></div>
+
+      <div class="card">
+        <h2>Manage products</h2>
+        <div id="productList" class="product-list"></div>
+      </div>
     </section>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
-  <script src="admin.js"></script>
+
+  <script>
+    const STORAGE_KEY = 'ycof_site_data_v1';
+    const ADMIN_EMAIL = 'admin@youngceoorganicfarm.com';
+    const ADMIN_PASSWORD = 'admin123';
+
+    const defaultState = {
+      farmName: 'YOUNG CEO ORGANIC FARM',
+      heroTitle: 'Fresh, healthy food grown with purpose.',
+      heroText: 'YOUNG CEO ORGANIC FARM grows nutrient-rich fruits, vegetables, and herbs using eco-friendly methods that protect the soil and bring the best of nature to your family.',
+      aboutText: 'YOUNG CEO ORGANIC FARM is a purpose-driven agricultural venture dedicated to producing healthy food while protecting the environment. We combine practical farming knowledge with modern sustainable techniques to nurture a better food system.',
+      phone: '+254 792191671',
+      email: 'youngceoorganicfarm@gmail.com',
+      products: [
+        { id: 1, name: 'Garden Greens', category: 'Vegetables', price: 1500, description: 'Fresh leafy greens, herbs, and seasonal vegetables grown for taste and nourishment.', image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80' },
+        { id: 2, name: 'Sun-Ripened Fruit', category: 'Fruit', price: 2200, description: 'Juicy, naturally grown fruits harvested at peak ripeness for maximum sweetness and nutrition.', image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80' },
+        { id: 3, name: 'Organic Essentials', category: 'Farm Box', price: 3200, description: 'A healthy mix of greens, roots, and produce designed for daily meals and family nutrition.', image: 'https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=900&q=80' }
+      ]
+    };
+
+    function getState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultState));
+          return JSON.parse(JSON.stringify(defaultState));
+        }
+        const parsed = JSON.parse(raw);
+        return { ...JSON.parse(JSON.stringify(defaultState)), ...parsed, products: parsed.products || defaultState.products };
+      } catch (error) {
+        return JSON.parse(JSON.stringify(defaultState));
+      }
+    }
+
+    function saveState(nextState) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(nextState));
+    }
+
+    function setNotice(text, type='info') {
+      const notice = document.getElementById('loginNotice');
+      notice.textContent = text;
+      notice.className = `notice ${type}`;
+    }
+
+    function isLoggedIn() {
+      return localStorage.getItem('ycof_admin_logged_in') === 'true';
+    }
+
+    function setLoggedIn(value) {
+      localStorage.setItem('ycof_admin_logged_in', value ? 'true' : 'false');
+    }
+
+    function showDashboard() {
+      document.getElementById('loginView').classList.add('hidden');
+      document.getElementById('dashboardView').classList.remove('hidden');
+      document.getElementById('logoutBtn').classList.remove('hidden');
+      loadFormData();
+      renderProducts();
+    }
+
+    function showLogin() {
+      document.getElementById('loginView').classList.remove('hidden');
+      document.getElementById('dashboardView').classList.add('hidden');
+      document.getElementById('logoutBtn').classList.add('hidden');
+      setNotice('Demo login: admin@youngceoorganicfarm.com / admin123', 'info');
+    }
+
+    function loadFormData() {
+      const state = getState();
+      document.getElementById('farmNameInput').value = state.farmName;
+      document.getElementById('heroTitleInput').value = state.heroTitle;
+      document.getElementById('heroTextInput').value = state.heroText;
+      document.getElementById('aboutTextInput').value = state.aboutText;
+      document.getElementById('phoneInput').value = state.phone;
+      document.getElementById('emailInput').value = state.email;
+    }
+
+    function renderProducts() {
+      const state = getState();
+      const list = document.getElementById('productList');
+      if (!state.products || state.products.length === 0) {
+        list.innerHTML = '<p class="muted">No products yet.</p>';
+        return;
+      }
+
+      list.innerHTML = state.products.map((product) => `
+        <div class="product-item">
+          <div class="product-head">
+            <h3>${product.name}</h3>
+            <button class="btn danger" data-delete-id="${product.id}" type="button">Delete</button>
+          </div>
+          <div class="product-body">
+            <img src="${product.image || 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80'}" alt="${product.name}" />
+            <div style="flex:1; width:100%;">
+              <div class="field"><label>Name</label><input data-field="name" data-id="${product.id}" value="${product.name}" /></div>
+              <div class="field"><label>Category</label><input data-field="category" data-id="${product.id}" value="${product.category}" /></div>
+              <div class="field"><label>Price (KSh)</label><input data-field="price" data-id="${product.id}" type="number" min="0" value="${product.price}" /></div>
+              <div class="field"><label>Description</label><textarea data-field="description" data-id="${product.id}">${product.description}</textarea></div>
+              <div class="field"><label>Image URL</label><input data-field="image" data-id="${product.id}" value="${product.image || ''}" /></div>
+              <div class="actions"><button class="btn secondary" data-save-id="${product.id}" type="button">Save changes</button></div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      list.querySelectorAll('[data-delete-id]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const id = Number(button.dataset.deleteId);
+          const state = getState();
+          state.products = state.products.filter((item) => item.id !== id);
+          saveState(state);
+          renderProducts();
+        });
+      });
+
+      list.querySelectorAll('[data-save-id]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const id = Number(button.dataset.saveId);
+          const state = getState();
+          const product = state.products.find((item) => item.id === id);
+          if (!product) return;
+
+          const wrapper = button.closest('.product-item');
+          product.name = wrapper.querySelector('[data-field="name"]').value;
+          product.category = wrapper.querySelector('[data-field="category"]').value;
+          product.price = Number(wrapper.querySelector('[data-field="price"]').value || 0);
+          product.description = wrapper.querySelector('[data-field="description"]').value;
+          product.image = wrapper.querySelector('[data-field="image"]').value || product.image;
+
+          saveState(state);
+          renderProducts();
+          setNotice('Product updated successfully.', 'info');
+        });
+      });
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        setLoggedIn(true);
+        showDashboard();
+        setNotice('Logged in successfully.', 'info');
+      } else {
+        setNotice('Invalid credentials. Use the demo admin login shown above.', 'error');
+      }
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      setLoggedIn(false);
+      showLogin();
+    });
+
+    document.getElementById('settingsForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const state = getState();
+      state.farmName = document.getElementById('farmNameInput').value.trim() || state.farmName;
+      state.heroTitle = document.getElementById('heroTitleInput').value.trim() || state.heroTitle;
+      state.heroText = document.getElementById('heroTextInput').value.trim() || state.heroText;
+      state.aboutText = document.getElementById('aboutTextInput').value.trim() || state.aboutText;
+      state.phone = document.getElementById('phoneInput').value.trim() || state.phone;
+      state.email = document.getElementById('emailInput').value.trim() || state.email;
+      saveState(state);
+      setNotice('Homepage settings saved successfully.', 'info');
+      window.location.href = 'index.html';
+    });
+
+    document.getElementById('productForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const state = getState();
+      const fileInput = document.getElementById('productImageInput');
+      const selectedFile = fileInput.files && fileInput.files[0];
+
+      const nextProduct = {
+        id: Date.now(),
+        name: document.getElementById('productNameInput').value.trim(),
+        category: document.getElementById('productCategoryInput').value.trim(),
+        price: Number(document.getElementById('productPriceInput').value || 0),
+        description: document.getElementById('productDescriptionInput').value.trim(),
+        image: ''
+      };
+
+      if (!nextProduct.name || !nextProduct.category || nextProduct.price < 0 || !nextProduct.description) {
+        setNotice('Please fill in all product fields before adding a product.', 'error');
+        return;
+      }
+
+      if (selectedFile) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          nextProduct.image = reader.result;
+          state.products.unshift(nextProduct);
+          saveState(state);
+          renderProducts();
+          setNotice('Product added successfully.', 'info');
+          event.target.reset();
+        };
+        reader.readAsDataURL(selectedFile);
+      } else {
+        nextProduct.image = 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80';
+        state.products.unshift(nextProduct);
+        saveState(state);
+        renderProducts();
+        setNotice('Product added successfully.', 'info');
+        event.target.reset();
+      }
+    });
+
+    if (isLoggedIn()) showDashboard(); else showLogin();
+  </script>
 </body>
 </html>
