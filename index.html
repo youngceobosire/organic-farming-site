@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOUNG CEO ORGANIC FARM</title>
+  <meta name="description" content="YOUNG CEO ORGANIC FARM offers fresh organic produce, sustainable farming, and healthy food solutions for homes and communities." />
+  <style>
+    :root {
+      --green-900: #1d4d3b;
+      --green-700: #2d6a4f;
+      --green-500: #58a56b;
+      --green-300: #dfeee3;
+      --gold: #d7b36a;
+      --cream: #f7f5ee;
+      --text: #1f2a22;
+      --muted: #58655d;
+      --white: #ffffff;
+      --shadow: 0 22px 50px rgba(13, 43, 32, 0.12);
+      --radius: 24px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; margin: 0; padding: 0; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--green-900);
+      color: var(--white);
+      font-size: 0.9rem;
+      padding: 10px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .topbar .info {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0.9;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(29,77,59,0.08);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green-900);
+      letter-spacing: 0.04em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-500), var(--green-900));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--green-700); }
+    .nav-cta {
+      background: var(--green-700);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(45,106,79,0.18);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--green-900);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(8,26,20,0.72) 0%, rgba(8,26,20,0.54) 40%, rgba(8,26,20,0.28) 100%),
+        url('https://images.unsplash.com/photo-1464226184884-fa52ac9c3f3c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 110px 0 90px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--cream);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 620px;
+      color: rgba(255,255,255,0.84);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--green-500);
+      color: var(--white);
+      box-shadow: 0 16px 30px rgba(88,165,107,0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
+
+    .stat { min-width: 130px; }
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .mini-box:last-child { margin-bottom: 0; }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      background: rgba(215,179,106,0.15);
+      color: #f9e6b3;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      margin: 16px 0 8px;
+      font-weight: 700;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-head .eyebrow-dark {
+      display: inline-block;
+      background: var(--green-300);
+      color: var(--green-900);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin: 16px 0 12px;
+      letter-spacing: -0.03em;
+      color: var(--green-900);
+    }
+
+    .section-head p {
+      margin: 0 auto;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid rgba(29,77,59,0.08);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      box-shadow: 0 10px 30px rgba(11, 37, 27, 0.04);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--green-300), #edf8f0);
+      color: var(--green-900);
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 12px;
+      color: var(--green-900);
+      font-size: 1.4rem;
+    }
+
+    .feature-card p { margin: 0; color: var(--muted); }
+    .about { background: linear-gradient(180deg, #f4f9f4 0%, #ffffff 100%); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      min-height: 500px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255,255,255,0.96);
+      border-radius: 20px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      max-width: 240px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--green-900);
+      margin-bottom: 2px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1.03rem;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 0;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--green-300);
+      display: grid;
+      place-items: center;
+      color: var(--green-900);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid rgba(29,77,59,0.08);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(14, 46, 28, 0.05);
+    }
+
+    .product-card img {
+      height: 260px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .product-body { padding: 22px 20px 24px; }
+    .product-tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--green-300);
+      color: var(--green-900);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      color: var(--green-900);
+    }
+
+    .product-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: var(--green-900);
+    }
+
+    .price { color: var(--green-700); font-size: 1.15rem; }
+    .process { background: #f7f5ee; }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid rgba(29,77,59,0.08);
+      border-radius: 24px;
+      padding: 24px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-number {
+      position: absolute;
+      right: 18px;
+      top: 16px;
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 800;
+      color: rgba(45,106,79,0.08);
+    }
+
+    .step h3 {
+      margin: 0 0 12px;
+      color: var(--green-900);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 26px;
+      border: 1px solid rgba(29,77,59,0.08);
+      padding: 26px 22px;
+      box-shadow: 0 16px 32px rgba(10, 36, 26, 0.04);
+    }
+
+    .stars {
+      color: var(--gold);
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+      font-size: 1.1rem;
+    }
+
+    .review-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .review-person {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #cedecf, #c3d8bb);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--green-900);
+    }
+
+    .review-person strong { display: block; color: var(--green-900); }
+    .review-person span { color: var(--muted); font-size: 0.92rem; }
+
+    .cta {
+      background: linear-gradient(135deg, var(--green-900), var(--green-700));
+      color: var(--white);
+      border-radius: 30px;
+      padding: 42px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta h3 {
+      margin: 0 0 6px;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--white);
+    }
+
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: #f9faf5;
+      border: 1px solid rgba(29,77,59,0.08);
+      border-radius: 26px;
+      padding: 28px 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(29,77,59,0.08);
+    }
+
+    .contact-item:last-child { border-bottom: none; }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--green-300);
+      color: var(--green-900);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--green-900);
+      margin-bottom: 3px;
+    }
+
+    .contact-item span { color: var(--muted); }
+
+    form {
+      background: #fff;
+      border: 1px solid rgba(29,77,59,0.08);
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: 0 20px 35px rgba(8, 30, 20, 0.04);
+    }
+
+    .field { margin-bottom: 18px; }
+    .field label {
+      display: block;
+      font-weight: 700;
+      color: var(--green-900);
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(29,77,59,0.14);
+      background: #f9faf7;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--text);
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: 2px solid rgba(88,165,107,0.25);
+      border-color: rgba(88,165,107,0.5);
+    }
+
+    .site-footer {
+      background: #102d23;
+      color: rgba(255,255,255,0.8);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .about-grid,
+      .contact-wrap { grid-template-columns: 1fr; }
+      .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .products-grid,
+      .process-grid,
+      .reviews { grid-template-columns: 1fr; }
+
+      .nav-links {
+        position: absolute;
+        left: 16px;
+        top: 78px;
+        right: 16px;
+        background: rgba(255,255,255,0.98);
+        border: 1px solid rgba(29,77,59,0.08);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 16px;
+      }
+
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .features { grid-template-columns: 1fr; }
+      .hero { padding-top: 90px; }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn { width: 100%; }
+      .cta { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="info">
+        <span>Fresh from our fields to your table</span>
+        <span>Organic • Sustainable • Family-owned</span>
+      </div>
+      <span>Call: +254 792191671</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="YOUNG CEO ORGANIC FARM home">
+        <span class="brand-mark">Y</span>
+        <span>YOUNG CEO ORGANIC FARM</span>
+      </a>
+
+      <nav class="nav-links" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Order Now</a>
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Purely Organic</span>
+          <h1>Fresh, healthy food grown with purpose.</h1>
+          <p>
+            YOUNG CEO ORGANIC FARM grows nutrient-rich fruits, vegetables, and herbs using eco-friendly methods that protect the soil,
+            support biodiversity, and bring the best of nature to your family and community.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">Explore Harvest</a>
+            <a class="btn btn-secondary" href="#about">Our Story</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Organic</span>
+            </div>
+            <div class="stat">
+              <strong>Fresh</strong>
+              <span>Daily harvest</span>
+            </div>
+            <div class="stat">
+              <strong>Local</strong>
+              <span>Community grown</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mini-box">
+            <span class="tag">Seasonal Picks</span>
+            <div class="card-title">Organic Basket</div>
+            <div class="card-meta">
+              <span>Garden fresh</span>
+              <span>Farm direct</span>
+            </div>
+          </div>
+
+          <div class="mini-box">
+            <div class="card-meta">
+              <span>Today’s harvest</span>
+              <span>Fresh</span>
+            </div>
+            <div class="card-title">Cabbage • Kales • Tomatoes • Carrots</div>
+          </div>
+
+          <div class="mini-box">
+            <div class="card-meta">
+              <span>Certified</span>
+              <span>Eco-friendly</span>
+            </div>
+            <div class="card-title">Healthy farming for a better tomorrow.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow-dark">Why choose us</span>
+          <h2>Nature-led farming with a healthier future.</h2>
+          <p>
+            We believe in growing food that is not only fresh but also safe, sustainable, and full of life.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature-card">
+            <div class="feature-icon">🌱</div>
+            <h3>Healthy Soil</h3>
+            <p>We enrich the earth with compost, crop rotation, and natural methods that bring life back to the soil.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">💧</div>
+            <h3>Water Smart</h3>
+            <p>Efficient irrigation and careful planning reduce waste while keeping crops healthy and productive.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🐝</div>
+            <h3>Biodiversity</h3>
+            <p>Our farm supports pollinators and natural habitats to preserve the balance of nature.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🥬</div>
+            <h3>Fresh Harvest</h3>
+            <p>We pick at peak ripeness, keeping flavor, nutrition, and freshness at their best.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <div class="floating-card">
+            <strong>100%</strong>
+            <span>Natural and sustainable growing practices</span>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow-dark">About our farm</span>
+          <h2>Growing food that supports people and the planet.</h2>
+          <p>
+            YOUNG CEO ORGANIC FARM is a purpose-driven agricultural venture dedicated to producing healthy food while protecting the environment.
+            We combine practical farming knowledge with modern sustainable techniques to nurture a better food system.
+          </p>
+          <p>
+            From seedling to harvest, our commitment is to support families with clean, nutritious produce grown in harmony with nature.
+          </p>
+
+          <ul class="check-list">
+            <li><span class="check">✓</span> No harmful chemicals or synthetic pesticides</li>
+            <li><span class="check">✓</span> Nutrient-rich produce for homes and businesses</li>
+            <li><span class="check">✓</span> Honest, eco-conscious farming values</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow-dark">Our harvest</span>
+          <h2>Fresh picks for a healthier lifestyle.</h2>
+          <p>
+            From leafy greens to seasonal vegetables, our farm offers produce that is fresh, clean, and packed with natural goodness.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Organic vegetables" />
+            <div class="product-body">
+              <span class="product-tag">Vegetables</span>
+              <h3>Garden Greens</h3>
+              <p>Fresh leafy greens, herbs, and seasonal vegetables grown for taste and nourishment.</p>
+              <div class="product-meta">
+                <span>Farm pack</span>
+                <span class="price">KSh 1,500</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=900&q=80" alt="Organic fruits" />
+            <div class="product-body">
+              <span class="product-tag">Fruit</span>
+              <h3>Sun-Ripened Fruit</h3>
+              <p>Juicy, naturally grown fruits harvested at peak ripeness for maximum sweetness and nutrition.</p>
+              <div class="product-meta">
+                <span>Seasonal box</span>
+                <span class="price">KSh 2,200</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=900&q=80" alt="Organic produce" />
+            <div class="product-body">
+              <span class="product-tag">Farm Box</span>
+              <h3>Organic Essentials</h3>
+              <p>A healthy mix of greens, roots, and produce designed for daily meals and family nutrition.</p>
+              <div class="product-meta">
+                <span>Monthly plan</span>
+                <span class="price">KSh 3,200</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow-dark">Our process</span>
+          <h2>From soil to table, with care at every step.</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Prepare soil</h3>
+            <p>We create rich, healthy soil using compost, crop rotation, and careful natural nutrition.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Sow & nurture</h3>
+            <p>Seeds are planted and cared for with attention to health, growth, and sustainability.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Harvest at peak</h3>
+            <p>We harvest when produce is naturally at its most flavorful and nourishing stage.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">04</div>
+            <h3>Deliver fresh</h3>
+            <p>Fresh produce is packed and delivered quickly to keep quality and taste at their very best.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow-dark">Testimonials</span>
+          <h2>Families trust us for quality, freshness, and care.</h2>
+        </div>
+
+        <div class="reviews">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“The vegetables are always fresh and full of flavor. We have changed the way we eat because of their quality.”</p>
+            <div class="review-person">
+              <div class="avatar">A</div>
+              <div>
+                <strong>Abigail N.</strong>
+                <span>Homeowner</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Very clean produce, excellent service, and a genuine love for organic farming. Highly recommended.”</p>
+            <div class="review-person">
+              <div class="avatar">M</div>
+              <div>
+                <strong>Michael O.</strong>
+                <span>Customer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Their farm practices are thoughtful and sustainable. Fresh, healthy produce that truly feels good to eat.”</p>
+            <div class="review-person">
+              <div class="avatar">S</div>
+              <div>
+                <strong>Sarah K.</strong>
+                <span>Community buyer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h3>Bring organic goodness home.</h3>
+            <p>Order from YOUNG CEO ORGANIC FARM and enjoy fresh produce grown with care and integrity.</p>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="background:#fff;color:var(--green-900);">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow-dark">Contact us</span>
+          <h2>Let’s grow something healthy together.</h2>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Farm location</strong>
+                <span>Kenya</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <strong>Call us</strong>
+                <span>+254 792191671</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>youngceoorganicfarm@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🕒</div>
+              <div>
+                <strong>Hours</strong>
+                <span>Monday - Saturday, 7:00 AM - 6:00 PM</span>
+              </div>
+            </div>
+          </div>
+
+          <form>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" type="text" placeholder="Your name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell us what you would like to order or ask"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> YOUNG CEO ORGANIC FARM</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+    if (menuToggle && nav) {
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thanks! Your message has been submitted.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
